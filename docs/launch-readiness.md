@@ -4,7 +4,7 @@ Date: 2026-06-03
 
 ## Current Stage
 
-Production deployment is live on the purchased domain.
+L0 launch is complete on the purchased domain.
 
 Approved:
 
@@ -29,15 +29,17 @@ Complete:
 - Cloudflare Email Routing MX and SPF records resolved.
 - GitHub repository created: `https://github.com/qiaosheng125/envdebugger`.
 - Local commits pushed to GitHub `master`.
+- Google Search Console submitted by user.
+- Bing Webmaster submitted by user.
 
 Not yet complete:
 
-- User-owned GSC and Bing tasks.
+- None for L0 launch.
 
 User-owned:
 
-- Google Search Console submission.
-- Bing Webmaster submission.
+- Google Search Console submitted.
+- Bing Webmaster submitted.
 
 ## Product Summary
 
@@ -101,7 +103,13 @@ This MVP is different because it is an interactive debug wizard with a copyable 
 
 Before public launch:
 
-1. Complete user-owned GSC and Bing tasks.
+No remaining L0 blockers.
+
+Next scheduled review:
+
+- Day 7: 2026-06-10.
+- Day 14: 2026-06-17.
+- Day 30: 2026-07-03.
 
 Responsibility note:
 
@@ -150,6 +158,4 @@ The tool must continue to follow these rules:
 
 ## Decision
 
-Live for product review.
-
-Not full L0 until user-owned GSC/Bing tasks are completed.
+L0 launch complete.
