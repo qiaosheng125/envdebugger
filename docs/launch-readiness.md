@@ -28,10 +28,11 @@ Complete:
 - Public support email routing enabled: `support@envdebugger.com` -> `xyf1254519010@gmail.com`.
 - Cloudflare Email Routing MX and SPF records resolved.
 - GitHub repository created: `https://github.com/qiaosheng125/envdebugger`.
+- Local commits pushed to GitHub `master`.
 
 Not yet complete:
 
-- Push local commits to GitHub after GitHub network connectivity recovers.
+- User-owned GSC and Bing tasks.
 
 User-owned:
 
@@ -100,7 +101,7 @@ This MVP is different because it is an interactive debug wizard with a copyable 
 
 Before public launch:
 
-1. Push local commits to GitHub after network connectivity recovers.
+1. Complete user-owned GSC and Bing tasks.
 
 Responsibility note:
 
@@ -151,4 +152,4 @@ The tool must continue to follow these rules:
 
 Live for product review.
 
-Not full L0 until local commits are pushed to GitHub and user-owned GSC/Bing tasks are completed.
+Not full L0 until user-owned GSC/Bing tasks are completed.
