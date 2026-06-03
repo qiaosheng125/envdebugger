@@ -1,0 +1,18 @@
+{
+  "siteName": "Vercel Env Checker",
+  "domain": "envdebugger.com",
+  "wwwHost": "www.envdebugger.com",
+  "canonicalUrl": "https://www.envdebugger.com",
+  "homeUrl": "https://www.envdebugger.com/",
+  "sitemapUrl": "https://www.envdebugger.com/sitemap.xml",
+  "supportEmail": "support@envdebugger.com",
+  "ga4PropertyName": "Vercel Env Checker - envdebugger.com",
+  "ga4StreamName": "Vercel Env Checker - www.envdebugger.com",
+  "ga4Protocol": "https://",
+  "ga4WebsiteUrl": "www.envdebugger.com",
+  "ga4MeasurementId": "G-X2J56STZ57",
+  "clarityProjectName": "Vercel Env Checker - envdebugger.com",
+  "clarityWebsiteUrl": "https://www.envdebugger.com",
+  "clarityProjectId": "x16y28xa3o",
+  "operationLog": "03_网站项目/008_vercel-nextjs-env-checker/admin-automation-log.jsonl"
+}

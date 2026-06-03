@@ -5,5 +5,4 @@ node_modules
 !.env.example
 .next-dev*.log
 qa/*.png
-
-.vercel
+admin-automation-log.jsonl
