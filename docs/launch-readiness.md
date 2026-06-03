@@ -25,11 +25,13 @@ Complete:
 - GA4 and Clarity env vars set in Vercel production.
 - Production redeployed after analytics env vars.
 - Production HTML verified for GA4 and Clarity scripts.
+- Public support email routing enabled: `support@envdebugger.com` -> `xyf1254519010@gmail.com`.
+- Cloudflare Email Routing MX and SPF records resolved.
+- GitHub repository created: `https://github.com/qiaosheng125/envdebugger`.
 
 Not yet complete:
 
-- GitHub remote repository.
-- Public support email routing.
+- Push local commits to GitHub after GitHub network connectivity recovers.
 
 User-owned:
 
@@ -98,8 +100,7 @@ This MVP is different because it is an interactive debug wizard with a copyable 
 
 Before public launch:
 
-1. Create GitHub repository.
-2. Configure support email routing.
+1. Push local commits to GitHub after network connectivity recovers.
 
 Responsibility note:
 
@@ -150,4 +151,4 @@ The tool must continue to follow these rules:
 
 Live for product review.
 
-Not full L0 until support email routing, GA4, Clarity, user-owned GSC/Bing, and GitHub remote are configured.
+Not full L0 until local commits are pushed to GitHub and user-owned GSC/Bing tasks are completed.
