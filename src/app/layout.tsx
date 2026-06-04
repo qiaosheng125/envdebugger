@@ -11,9 +11,6 @@ export const metadata: Metadata = {
   },
   description:
     "Find why your Next.js or Vercel environment variable is undefined, stale, missing, or only works locally. Get a safe checklist and copyable commands.",
-  alternates: {
-    canonical: "/"
-  },
   openGraph: {
     title: "Vercel Env Checker",
     description:

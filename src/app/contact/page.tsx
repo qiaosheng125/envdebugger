@@ -1,7 +1,10 @@
 import { supportEmail } from "../site";
 
 export const metadata = {
-  title: "Contact"
+  title: "Contact",
+  alternates: {
+    canonical: "/contact"
+  }
 };
 
 export default function ContactPage() {
