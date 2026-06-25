@@ -10,6 +10,13 @@ import {
   options,
   type FormState
 } from "./diagnosis";
+import {
+  safeLabel,
+  trackCoreError,
+  trackCoreSubmit,
+  trackCoreSuccess,
+  trackEvent
+} from "./analytics-events";
 
 const docs = [
   {
@@ -30,19 +37,41 @@ export default function EnvCheckerApp() {
   const report = useMemo(() => buildReport(form, findings), [form, findings]);
 
   function updateField(field: keyof FormState, value: string) {
-    setForm((current) => ({
-      ...current,
+    const nextForm = {
+      ...form,
       [field]: value
-    }));
+    };
+
+    setForm(nextForm);
     setCopied("");
+
+    const nextFindings = getFindings(nextForm);
+    const topSeverity = nextFindings[0]?.severity ?? "none";
+
+    trackEvent("diagnosis_update", {
+      field: safeLabel(field),
+      value: safeLabel(value),
+      finding_count: nextFindings.length,
+      top_severity: safeLabel(topSeverity)
+    });
+    trackCoreSubmit("env_diagnosis", "select_change");
+    trackCoreSuccess("env_diagnosis", topSeverity, nextFindings.length);
   }
 
   async function copyText(label: string, text: string) {
+    const copyType = safeLabel(label.toLowerCase(), "clipboard");
+
     try {
       await navigator.clipboard.writeText(text);
       setCopied(`${label} copied`);
+      trackEvent(`copy_${copyType}`, {
+        copy_type: copyType,
+        finding_count: findings.length,
+        top_severity: safeLabel(findings[0]?.severity ?? "none")
+      });
     } catch {
       setCopied("Copy failed. Select the text manually.");
+      trackCoreError("copy_output", "clipboard");
     }
   }
 
@@ -200,6 +229,25 @@ export default function EnvCheckerApp() {
               {doc.label}
             </a>
           ))}
+        </div>
+      </section>
+
+      <section className="relatedChecks" aria-labelledby="related-checks-title">
+        <div>
+          <p className="eyebrow">Related checks</p>
+          <h2 id="related-checks-title">Local env checks for adjacent deployment issues.</h2>
+        </div>
+        <div className="relatedGrid">
+          <a href="/docker-compose-env-interpolation">
+            <span>Docker Compose</span>
+            <strong>Env interpolation checker</strong>
+            <p>Find missing ${"{VAR}"} names, defaults, required markers, and env_file boundaries.</p>
+          </a>
+          <a href="/github-actions-reusable-workflow-env">
+            <span>GitHub Actions</span>
+            <strong>Reusable workflow env checker</strong>
+            <p>Compare workflow_call inputs and secrets with the caller mapping.</p>
+          </a>
         </div>
       </section>
 

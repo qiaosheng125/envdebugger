@@ -8,7 +8,10 @@
     "build": "next build --webpack",
     "start": "next start",
     "smoke": "node scripts/smoke-check.mjs",
-    "test:rules": "node --experimental-strip-types scripts/test-diagnosis-rules.mjs"
+    "seo-preflight": "node scripts/seo-preflight.mjs",
+    "privacy-smoke": "node scripts/privacy-smoke.mjs",
+    "test:rules": "node --experimental-strip-types scripts/test-diagnosis-rules.mjs",
+    "test:inner-pages": "node --experimental-strip-types scripts/test-inner-page-rules.mjs"
   },
   "dependencies": {
     "next": "latest",
