@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { analyzeComposeEnv } from "../src/app/lib/compose-env-interpolation.ts";
 import { analyzeReusableWorkflowEnv } from "../src/app/lib/reusable-workflow-env.ts";
+import { analyzeTerraformTfvars } from "../src/app/lib/terraform-tfvars-preflight.ts";
 
 const compose = analyzeComposeEnv({
   context: "ci",
@@ -55,6 +56,45 @@ const inherit = analyzeReusableWorkflowEnv({
 assert.equal(inherit.status, "warn");
 assert.equal(inherit.usesSecretsInherit, true);
 assert.deepEqual(inherit.missingSecrets, []);
+
+const tfvars = analyzeTerraformTfvars({
+  variablesText: `variable "environment" {
+  type = string
+}
+
+variable "region" {
+  type = string
+}
+
+variable "service_token" {
+  type      = string
+  sensitive = true
+}`,
+  tfvarsText: `environment = "production"
+service_token = "do-not-copy"
+legacy_name = "unused"`
+});
+
+assert.equal(tfvars.status, "fail");
+assert.deepEqual(tfvars.missingRequired, ["region"]);
+assert.deepEqual(tfvars.unknownAssignments, ["legacy_name"]);
+assert.ok(tfvars.sensitiveNames.includes("service_token"));
+assert.ok(!tfvars.report.includes("do-not-copy"));
+
+const tfvarsClean = analyzeTerraformTfvars({
+  variablesText: `variable "environment" {
+  type = string
+}
+
+variable "instance_count" {
+  type    = number
+  default = 2
+}`,
+  tfvarsText: `environment = "preview"`
+});
+
+assert.equal(tfvarsClean.status, "pass");
+assert.deepEqual(tfvarsClean.missingRequired, []);
 
 console.log("Inner page rules tests passed");
 

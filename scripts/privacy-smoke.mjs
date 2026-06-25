@@ -12,6 +12,10 @@ const pages = [
   {
     path: "/github-actions-reusable-workflow-env",
     mustInclude: ["No GitHub token", "compares YAML keys and mapping names only"]
+  },
+  {
+    path: "/terraform-tfvars-variable-preflight",
+    mustInclude: ["Names only", "compares static variable names and key boundaries only"]
   }
 ];
 

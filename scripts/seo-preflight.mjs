@@ -18,6 +18,12 @@ const pages = [
     canonical: "/github-actions-reusable-workflow-env",
     title: "GitHub Actions Reusable Workflow Env Checker",
     description: "workflow_call"
+  },
+  {
+    path: "/terraform-tfvars-variable-preflight",
+    canonical: "/terraform-tfvars-variable-preflight",
+    title: "Terraform Tfvars Variable Preflight",
+    description: "Terraform"
   }
 ];
 

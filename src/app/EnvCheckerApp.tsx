@@ -248,6 +248,11 @@ export default function EnvCheckerApp() {
             <strong>Reusable workflow env checker</strong>
             <p>Compare workflow_call inputs and secrets with the caller mapping.</p>
           </a>
+          <a href="/terraform-tfvars-variable-preflight">
+            <span>Terraform</span>
+            <strong>Tfvars variable preflight</strong>
+            <p>Compare variable declarations with tfvars assignment names before a plan run.</p>
+          </a>
         </div>
       </section>
 

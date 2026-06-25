@@ -5,6 +5,7 @@ const routes = [
   "",
   "/docker-compose-env-interpolation",
   "/github-actions-reusable-workflow-env",
+  "/terraform-tfvars-variable-preflight",
   "/about",
   "/contact",
   "/privacy",

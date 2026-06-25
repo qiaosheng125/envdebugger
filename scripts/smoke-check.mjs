@@ -9,12 +9,16 @@ const checks = [
     path: "/github-actions-reusable-workflow-env",
     text: "GitHub Actions reusable workflow env"
   },
+  {
+    path: "/terraform-tfvars-variable-preflight",
+    text: "Terraform tfvars variable preflight"
+  },
   { path: "/about", text: "About" },
   { path: "/contact", text: "Contact" },
   { path: "/privacy", text: "Privacy" },
   { path: "/terms", text: "Terms" },
   { path: "/robots.txt" },
-  { path: "/sitemap.xml", text: "/docker-compose-env-interpolation" }
+  { path: "/sitemap.xml", text: "/terraform-tfvars-variable-preflight" }
 ];
 
 for (const check of checks) {
